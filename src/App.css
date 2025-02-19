@@ -1,0 +1,130 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(156, 180, 224);
+  /* background-image: url(https://images.pexels.com/photos/125510/pexels-photo-125510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.png); */
+  /* background-size: cover; */
+  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.container{
+  width: 70%;
+  height: 75vh;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.primary{
+  width: 70%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.location-date{
+  width: 100%;
+  padding: 20px 200px 20px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+.location-icon{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  filter: invert(1);
+}
+.place{
+  width: 100px;
+  padding: 5px;
+  /* background-color: black; */
+}
+.date{
+  width: fit-content;
+  padding: 5px;
+  font-size: 18px;
+}
+.temp{
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.temperature{
+  font-size: 80px;
+  font-weight: 500;
+}
+.additional-info{
+padding: 5px;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 10px;
+
+}
+.hourly-forecast{
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.hourly-forecast li{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: white;
+  width: 120px;
+  padding: 8px;
+  background-color: rgba(0,0,0,0.15);
+  border: solid 1px grey;
+  border-radius: 8px;
+  align-items: center;
+}
+.secondary{
+  width: 30%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.4);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  border-radius: 0px 20px 20px 0px;
+}
+.details{
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  font-size: large;
+  display:flex ;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 10px;
+  border: solid 1px grey;
+}
+.instruction{
+  width: 100%;
+  display:flex ;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: solid 1px grey;
+  border-radius: 10px;
+}
