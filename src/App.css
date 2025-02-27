@@ -1,131 +1,212 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.main{
+.main {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh; /* Use min-height to ensure it covers the viewport */
   background-color: rgb(156, 180, 224);
-  /* background-image: url(https://images.pexels.com/photos/125510/pexels-photo-125510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.png); */
-  /* background-size: cover; */
   word-wrap: break-word;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px; /* Add padding for smaller screens */
 }
-.container{
-  width: 70%;
-  height: 75vh;
-  background-color: rgba(0,0,0,0.7);
+
+.container {
+  width: 90%; /* Reduce width for smaller screens */
+  max-width: 1200px; /* Set a max-width for larger screens */
+  min-height: 75vh; /* Use min-height for flexibility */
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  align-items: center;
+  padding: 20px; /* Add padding for smaller screens */
 }
-.primary{
-  width: 70%;
-  height: 100%;
+
+.primary {
+  width: 100%; /* Take full width on smaller screens */
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 50px; /* Add gap for spacing */
 }
-.location-date{
+
+.location-date {
   width: 100%;
-  padding: 20px 200px 20px 50px;
+  padding: 20px; /* Adjust padding for smaller screens */
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  align-items: center;
+  text-align: center; /* Center-align text */
   color: white;
+  gap: 10px; /* Add gap for spacing */
 }
-.location-icon{
+
+.location-icon {
   width: 15px;
   height: 15px;
   margin-right: 5px;
   filter: invert(1);
 }
-.place{
-  width: 100px;
+
+.place {
+  width: 100%; /* Take full width on smaller screens */
   padding: 5px;
-  /* background-color: black; */
+  font-size: 18px; /* Adjust font size for smaller screens */
 }
-.date{
-  width: fit-content;
+
+.date {
+  width: 100%; /* Take full width on smaller screens */
   padding: 5px;
-  font-size: 18px;
+  font-size: 16px; /* Adjust font size for smaller screens */
 }
-.temp{
+
+.temp {
   width: 100%;
   color: white;
   display: flex;
+  flex-direction: column; /* Stack vertically on smaller screens */
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.temperature{
-  font-size: 80px;
+
+.temperature {
+  font-size: 60px; /* Reduce font size for smaller screens */
   font-weight: 500;
 }
-.additional-info{
-padding: 5px;
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-gap: 10px;
 
-}
-.hourly-forecast{
-  width: 100%;
-  padding: 20px 50px;
+.additional-info {
+  padding: 10px; /* Adjust padding for smaller screens */
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 5px;
+  flex-direction: column;
+  align-items: center; /* Center-align items */
+  gap: 10px;
 }
-.hourly-forecast li{
+
+.hourly-forecast {
+  width: 100%;
+  padding: 20px; /* Adjust padding for smaller screens */
+  display: flex;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  align-items: center;
+  gap: 10px;
+}
+
+.hourly-forecast li {
   display: flex;
   flex-direction: column;
   gap: 5px;
   color: white;
-  width: 120px;
-  padding: 8px;
-  background-color: rgba(0,0,0,0.15);
+  width: 100%; /* Take full width on smaller screens */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.15);
   border: solid 1px grey;
   border-radius: 8px;
   align-items: center;
 }
-.secondary{
-  width: 30%;
-  height: 100%;
-  background-color:rgba(0,0,0,0.4);
-  padding: 30px;
+
+.secondary {
+  width: 100%; /* Take full width on smaller screens */
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px; /* Adjust padding for smaller screens */
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
   justify-content: space-between;
   color: white;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 20px; /* Adjust border radius */
+  margin-top: 20px; /* Add margin for spacing */
 }
-.details{
+
+.details {
   width: 100%;
-  height: fit-content;
   padding: 20px;
-  font-size: large;
-  display:flex ;
+  font-size: 16px; /* Adjust font size for smaller screens */
+  display: flex;
   border-radius: 10px;
   flex-direction: column;
   gap: 10px;
   border: solid 1px grey;
 }
-.instruction{
+
+.instruction {
   width: 100%;
-  display:flex ;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   border: solid 1px grey;
   border-radius: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller desktops */
+@media (min-width: 768px) {
+  .container {
+    width: 80%; /* Adjust width for tablets */
+    flex-direction: row; /* Switch back to row layout */
+  }
+
+  .primary {
+    width: 70%; /* Adjust width for tablets */
+  }
+
+  .location-date {
+    flex-direction: row; /* Switch back to row layout */
+    justify-content: space-between;
+    text-align: left; /* Align text to the left */
+  }
+
+  .place {
+    width: auto; /* Reset width */
+  }
+
+  .date {
+    width: auto; /* Reset width */
+  }
+
+  .temp {
+    flex-direction: row; /* Switch back to row layout */
+  }
+
+  .hourly-forecast {
+    flex-direction: row; /* Switch back to row layout */
+  }
+
+  .hourly-forecast li {
+    width: 120px; /* Reset width */
+  }
+
+  .secondary {
+    width: 30%; /* Reset width */
+    margin-top: 0; /* Remove margin */
+  }
+}
+
+/* For larger desktops */
+@media (min-width: 1024px) {
+  .container {
+    width: 70%; /* Adjust width for larger screens */
+  }
+
+  .temperature {
+    font-size: 80px; /* Increase font size for larger screens */
+  }
+
+  .place {
+    font-size: 20px; /* Increase font size for larger screens */
+  }
+
+  .date {
+    font-size: 18px; /* Increase font size for larger screens */
+  }
 }
