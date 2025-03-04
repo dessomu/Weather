@@ -91,7 +91,7 @@ function App() {
                   alt="location-icon"
                   className="location-icon"
                 />
-                <input value={cityName} style={{textDecoration:"underLine",textUnderlineOffset:"4px"}} onChange={(e)=>setCityName(e.target.value)} type="text" placeholder="City Name"/>
+                <input value={cityName}  onChange={(e)=>setCityName(e.target.value)} type="text" placeholder="City Name"/>
               </div>
               <div className="date">{date.toDateString()}</div>
             </div>
