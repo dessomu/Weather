@@ -60,6 +60,13 @@
   padding: 5px;
   font-size: 18px; /* Adjust font size for smaller screens */
 }
+.place input{
+  outline: none;
+  background-color: transparent;
+  border: solid transparent;
+  color: white;
+  font-size: 18px;
+}
 
 .date {
   width: 100%; /* Take full width on smaller screens */
