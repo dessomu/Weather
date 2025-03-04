@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [weather, setWeather] = useState();
   const [forecast, setForecast] = useState([]);
+  const [cityName, setCityName] = useState("Kolkata");
   let date = new Date();
 
   const [time, setTime] = useState(date);
@@ -20,7 +21,7 @@ function App() {
   const realTimeWeather = {
     temp: weather?.current?.temp_c || "Loading..",
     humidity: weather?.current?.humidity || "Loading..",
-    preipitation: weather?.current?.precip_mm || "Loading..",
+    precipitation: weather?.current?.precip_mm || "Loading..",
     wind: weather?.current?.wind_kph || "Loading..",
     windDir: weather?.current?.wind_dir || "Loading..",
     visibility: weather?.current?.vis_km || "Loading..",
@@ -34,12 +35,18 @@ function App() {
     hourlyForecast = forecast.slice(currentHour, currentHour + 5);
   }
 
-  console.log(weather);
+  console.log(hourlyForecast);
 
-  async function fetchWeather() {
+  useEffect(() => {
+    fetchWeather({ cityName });
+    fetchForecast({ cityName });
+  }
+  , [cityName]);
+
+  async function fetchWeather({cityName}) {
     try {
       const response = await fetch(
-        "https://api.weatherapi.com/v1/current.json?key=9e8d41abeb974084b5250832251802&q=Kolkata"
+        `https://api.weatherapi.com/v1/current.json?key=9e8d41abeb974084b5250832251802&q=${cityName}&aqi=yes`
       );
       const data = await response.json();
       if (data) {
@@ -52,10 +59,10 @@ function App() {
     }
   }
 
-  async function fetchForecast() {
+  async function fetchForecast({cityName}) {
     try {
       const response = await fetch(
-        "https://api.weatherapi.com/v1/forecast.json?key=9e8d41abeb974084b5250832251802&q=Kolkata&days=3&aqi=yes&alerts=yes"
+        `https://api.weatherapi.com/v1/forecast.json?key=9e8d41abeb974084b5250832251802&q=${cityName}&days=3&aqi=yes&alerts=yes`
       );
       const data = await response.json();
       if (data) {
@@ -84,7 +91,7 @@ function App() {
                   alt="location-icon"
                   className="location-icon"
                 />
-                Kolkata
+                <input value={cityName} style={{textDecoration:"underLine",textUnderlineOffset:"4px"}} onChange={(e)=>setCityName(e.target.value)} type="text" placeholder="City Name"/>
               </div>
               <div className="date">{date.toDateString()}</div>
             </div>
@@ -93,7 +100,7 @@ function App() {
               <div className="additional-info">
                 <span>💧{realTimeWeather.humidity} %</span>
                 <span>
-                  {"\uD83C\uDF27"} {realTimeWeather.preipitation} mm
+                  {"\uD83C\uDF27"} {hourlyForecast[0]?.precip_mm} mm
                 </span>
               </div>
             </div>
@@ -127,7 +134,7 @@ function App() {
               <p>Wind Speed : {realTimeWeather.wind} KM/H</p>
               <p>Wind Direction : {realTimeWeather.windDir}</p>
               <p>Visibility : {realTimeWeather.visibility} KM</p>
-              <p>Precip : {realTimeWeather.preipitation} mm</p>
+              <p>Precip : {hourlyForecast[0]?.precip_mm} mm</p>
             </div>
             <div className="instruction">
               <h3>Symbols</h3>
