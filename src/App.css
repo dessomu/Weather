@@ -63,7 +63,11 @@
 .place input{
   outline: none;
   background-color: transparent;
-  border: solid transparent;
+  border: solid 0.5px white;
+  padding: 4px;
+  border-radius: 5px;
+  width: 120px;
+  max-width: fit-content;
   color: white;
   font-size: 18px;
 }
