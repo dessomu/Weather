@@ -6,46 +6,44 @@
 
 .main {
   width: 100%;
-  min-height: 100vh; /* Use min-height to ensure it covers the viewport */
+  min-height: 100vh; 
   background-color: rgb(156, 180, 224);
   word-wrap: break-word;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 20px; /* Add padding for smaller screens */
+  padding: 20px; 
 }
 
 .container {
-  width: 90%; /* Reduce width for smaller screens */
-  max-width: 1200px; /* Set a max-width for larger screens */
-  min-height: 75vh; /* Use min-height for flexibility */
+  width: 70%; 
+  min-width: 745px;
+  max-width: 1200px;
+  min-height: 75vh; 
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   display: flex;
-  flex-direction: column; /* Stack vertically on smaller screens */
   align-items: center;
-  padding: 20px; /* Add padding for smaller screens */
+  padding: 20px;
 }
 
 .primary {
-  width: 100%; /* Take full width on smaller screens */
+  width: 70%; 
   background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 50px; /* Add gap for spacing */
+  gap: 50px; 
 }
 
 .location-date {
   width: 100%;
-  padding: 20px; /* Adjust padding for smaller screens */
+  padding: 20px; 
   display: flex;
-  flex-direction: column; /* Stack vertically on smaller screens */
-  align-items: center;
-  text-align: center; /* Center-align text */
+  justify-content: space-between;
   color: white;
-  gap: 10px; /* Add gap for spacing */
+  gap: 10px; 
 }
 
 .location-icon {
@@ -56,58 +54,54 @@
 }
 
 .place {
-  width: 100%; /* Take full width on smaller screens */
+  width: fit-content; 
   padding: 5px;
-  font-size: 18px; /* Adjust font size for smaller screens */
+  font-size: 18px;
 }
 .place input{
   outline: none;
   background-color: transparent;
   border: solid 0.5px white;
   padding: 4px;
-  border-radius: 5px;
+  border-radius: 8px;
   width: 120px;
-  max-width: fit-content;
   color: white;
   font-size: 18px;
   box-shadow: inset 0 0 8px rgba(0,0,0,0.9);
-
 }
 
 .date {
-  width: 100%; /* Take full width on smaller screens */
+  width: fit-content; 
   padding: 5px;
-  font-size: 16px; /* Adjust font size for smaller screens */
+  font-size: 16px; 
 }
 
 .temp {
   width: 100%;
   color: white;
   display: flex;
-  flex-direction: column; /* Stack vertically on smaller screens */
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
 .temperature {
-  font-size: 60px; /* Reduce font size for smaller screens */
+  font-size: 60px;
   font-weight: 500;
 }
 
 .additional-info {
-  padding: 10px; /* Adjust padding for smaller screens */
+  padding: 10px; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center-align items */
+  align-items: center; 
   gap: 10px;
 }
 
 .hourly-forecast {
   width: 100%;
-  padding: 20px; /* Adjust padding for smaller screens */
+  padding: 20px;
   display: flex;
-  flex-direction: column; /* Stack vertically on smaller screens */
   align-items: center;
   gap: 10px;
 }
@@ -117,16 +111,18 @@
   flex-direction: column;
   gap: 5px;
   color: white;
-  width: 100%; /* Take full width on smaller screens */
+  width: 100%; 
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.15);
   border: solid 1px grey;
   border-radius: 8px;
   align-items: center;
 }
-
+.hourly-forecast li strong{
+  font-size: 20px;
+}
 .secondary {
-  width: 100%; /* Take full width on smaller screens */
+  width: 30%; /* Take full width on smaller screens */
   background-color: rgba(0, 0, 0, 0.4);
   padding: 20px; /* Adjust padding for smaller screens */
   display: flex;
@@ -161,65 +157,170 @@
 }
 
 /* Media Queries for Responsiveness */
-
-/* For tablets and smaller desktops */
-@media (min-width: 768px) {
+/* for mobiles */
+@media (width <=450px) {
+  .main {
+    padding: 8px;
+  }
   .container {
-    width: 80%; /* Adjust width for tablets */
-    flex-direction: row; /* Switch back to row layout */
+    width: 100%; 
+    flex-direction: column; 
+    border-radius: 10px;
+    min-width: 0;
   }
-
   .primary {
-    width: 70%; /* Adjust width for tablets */
+    width: 100%; 
+    gap: 20px;
   }
-
   .location-date {
-    flex-direction: row; /* Switch back to row layout */
+    flex-direction: column;
     justify-content: space-between;
-    text-align: left; /* Align text to the left */
+    align-items: center;
+    padding: 10px;
   }
-
   .place {
-    width: auto; /* Reset width */
+    width: auto;
   }
-
+  .place input{
+    width: 100px; /* Adjust width for smaller screens */
+    font-size: 0.85rem;
+    padding: 4px 10px;
+  }
   .date {
-    width: auto; /* Reset width */
+    width: auto;
+    font-size: 0.85rem;
   }
-
   .temp {
-    flex-direction: row; /* Switch back to row layout */
+    flex-direction: row; 
   }
-
+  .temperature{
+    font-size: 2.5rem;
+  }
+  .additional-info{
+    font-size: 0.9rem;
+    gap: 5px;
+  }
   .hourly-forecast {
     flex-direction: row; /* Switch back to row layout */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
   }
-
   .hourly-forecast li {
-    width: 120px; /* Reset width */
+    width: 80px;
+    border: none;
+    font-size: 0.85rem;
   }
-
+  .hourly-forecast li strong{
+    font-size: 1.1rem;
+  }
   .secondary {
-    width: 30%; /* Reset width */
-    margin-top: 0; /* Remove margin */
+    width: 100%; 
+    margin-top: 20px; 
+    border-radius: 10px;
+  }
+  .details{
+    gap: 8px;
+    padding: 15px 20px;
+  }
+  .details p{
+    font-size: 0.9rem;
+  }
+  .instruction{
+    padding: 15px 20px;
+  }
+  .instruction span{
+    font-size: 0.9rem;
+  }
+}
+
+/* tablets */
+@media (450px< width <= 640px) {
+  .container {
+    width: 100%; 
+    flex-direction: column;
+    min-width: 0;
+
+  }
+  .primary {
+    width: 100%; 
+    gap: 30px;
+  }
+  .location-date {
+    flex-direction: row; 
+    justify-content: space-between;
+    text-align: left; 
+  }
+  .place {
+    width: auto; 
+  }
+  .place input{
+    width: 120px; 
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+  .date {
+    width: auto; 
+    font-size: 0.9rem;
+  }
+  .temp {
+    flex-direction: row;
+  }
+  .temperature{
+    font-size: 3rem;
+  }
+  .additional-info{
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+  .hourly-forecast {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hourly-forecast li {
+    width: 120px;
+  }
+  .hourly-forecast li strong {
+    font-size: 1.2rem;
+  }
+  .hourly-forecast li span{
+    font-size: 0.9rem;
+  }
+  .secondary {
+    width: 100%; 
+    margin-top: 0; 
+  }
+  .details {
+    font-size: 0.95rem;
+  }
+  .instruction{
+    font-size: 0.95rem;
   }
 }
 
 /* For larger desktops */
-@media (min-width: 1024px) {
+@media (640px< width <= 1024px) {
   .container {
-    width: 70%; /* Adjust width for larger screens */
+    width: 95%; 
+    flex-direction: column;
+    min-width: 0;
   }
-
-  .temperature {
-    font-size: 80px; /* Increase font size for larger screens */
+  .primary {
+    width: 100%; 
+    gap: 30px;
   }
-
-  .place {
-    font-size: 20px; /* Increase font size for larger screens */
+  .secondary{
+    width: 100%;
+    flex-direction: row;
+    position: relative;
   }
-
-  .date {
-    font-size: 18px; /* Increase font size for larger screens */
+  .secondary .time{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  .instruction{
+    align-self: self-end;
   }
 }
