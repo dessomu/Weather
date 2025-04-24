@@ -316,9 +316,12 @@
     position: relative;
   }
   .secondary .time{
+    width: 50%;
+    display: flex;
+    justify-content: center;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 40px;
   }
   .instruction{
     align-self: self-end;
